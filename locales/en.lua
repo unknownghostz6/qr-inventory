@@ -1,49 +1,62 @@
+--[[
+English base language translation for qb-inventory
+Translation done by wanderrer (Martin Riggs#0807 on Discord)
+]]--
 local Translations = {
-    error = {
-        failed = "Failed",
-        not_owned = "You do not own this item!", 
-        no_near = "No one nearby!",
-        no_access = "Not Accessible",
-        veh_locked = "Vehicle is locked!",
-        not_exist = "Item doesn\'t exist??",
-        no_cash = "You don\'t have enough cash..",
-        missing_item = "You don't have the right items..",
-        yourself = "You can't give yourself an item?",
-        toofar = "You are too far away to give items!",
-        otherfull = "The other players inventory is full!",
-        invfull = "Your inventory is full!",
-        not_enough = "You do not have enough items to transfer",
-        invalid_type = "Not a valid type..",
-        arguments = "Arguments not filled out correctly..",
-        cant_give = "Can't give item!",
-        invalid_amount = "Invalid Amount",
-        not_online = "Player Is Not Online",
+    progress = {
+        ["crafting"] = "Crafting...",
+        ["snowballs"] = "Collecting snowballs..",
     },
-    success = {
-        bought_item = "%{item} bought!",
-        recieved = "You Received %{amount}x %{item} from %{firstname} %{lastname}!",
-        gave = "You gave %{firstname} %{lastname} %{amount}x %{item} !",
-        yougave = "You Have Given %{name} %{amount}x %{item} !",
+    notify = {
+        ["failed"] = "Failed",
+        ["canceled"] = "Canceled",
+        ["vlocked"] = "Vehicle Locked",
+        ["notowned"] = "You do not own this item!",
+        ["missitem"] = "You don\'t have this item!",
+        ["nonb"] = "No one nearby!",
+        ["noaccess"] = "Not Accessible",
+        ["nosell"] = "You can\'t sell this item..",
+        ["itemexist"] = "Item doesn\'t exist??",
+        ["notencash"] = "You don\'t have enough cash..",
+        ["noitem"] = "You don\'t have the right items..",
+        ["gsitem"] = "You can\'t give yourself an item?",
+        ["tftgitem"] = "You are too far away to give items!",
+        ["infound"] = "Item you tried giving not found!",
+        ["iifound"] = "Incorrect item found try again!",
+        ["gitemrec"] = "You Received ",
+        ["gitemfrom"] = " From ",
+        ["gitemyg"] = "You gave ",
+        ["gitinvfull"] = "The other players inventory is full!",
+        ["giymif"] = "Your inventory is full!",
+        ["gitydhei"] = "You do not have enough of the item",
+        ["gitydhitt"] = "You do not have enough items to transfer",
+        ["navt"] = "Not a valid type..",
+        ["anfoc"] = "Arguments not filled out correctly..",
+        ["yhg"] = "You Have Given ",
+        ["cgitem"] = "Can\'t give item!",
+        ["idne"] = "Item Does Not Exist",
+        ["pdne"] = "Player Is Not Online",
     },
-    info = {
-        crafting_progress = "Crafting..",
-        pickup_snow = "Collecting snowballs..",
-        craft = "Craft",
-        craft_label = "Crafting",
-        attatch_label = "Attachment Crafting",
-        stash_none = "Stash-None",
-        stash = "Stash-",
-        trunk_none = "Trunk-None",
-        trunk = "Trunk-",
-        glove_none = "Glovebox-None",
-        glovebox = "Glovebox-",
-        playerLabel = "Player-",
-        dropped_none = "Dropped-None",
-        dropped = "Dropped-",
-    }
+    inf_mapping = {
+        ["opn_inv"] = "Open Inventory",
+        ["tog_slots"] = "Toggles keybind slots",
+        ["use_item"] = "Uses the item in slot ",
+    },
+    menu = {
+        ["vending"] = "Vending Machine",
+        ["craft"] = "Craft",
+        ["o_bag"] = "Open Bag",
+    },
+    interaction = {
+        ["craft"] = "~g~E~w~ - Craft",
+    },
+    label = {
+        ["craft"] = "Crafting",
+        ["a_craft"] = "Attachment Crafting",
+    },
 }
 
-Lang = Locale:new({
+Lang = Lang or Locale:new({
     phrases = Translations,
     warnOnMissing = true
 })

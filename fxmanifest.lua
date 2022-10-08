@@ -3,35 +3,33 @@ game 'rdr3'
 rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aware my resources *will* become incompatible once RedM ships.'
 
 description 'qr-Inventory'
-version '1.0.0'
 
 shared_scripts {
-	'@qr-core/shared/locale.lua',
-   	'locales/en.lua',	
-	'config.lua',
-	-- '@qr-weapons/config.lua'
+    '@qr-core/shared/locale.lua',
+    'locales/en.lua',
+    'locales/*.lua',
+    'config.lua'
 }
 
 server_scripts {
-	'@oxmysql/lib/MySQL.lua',
-	'server/main.lua'
+    '@oxmysql/lib/MySQL.lua',
+    'server/main.lua'
 }
-
 client_script 'client/main.lua'
 
 ui_page {
-	'html/ui.html'
+    'html/ui.html'
 }
 
 files {
-	'html/ui.html',
-	'html/css/main.css',
-	'html/js/app.js',
-	'html/images/*.png',
-	'html/images/*.jpg',
-	'html/ammo_images/*.png',
-	'html/attachment_images/*.png',
-	'html/*.ttf'
+    'html/ui.html',
+    'html/css/main.css',
+    'html/js/app.js',
+    'html/images/*.png',
+    'html/images/*.jpg',
+    'html/ammo_images/*.png',
+    'html/attachment_images/*.png',
+    'html/*.ttf'
 }
 
--- dependency 'qr-weapons'
+lua54 'yes'
