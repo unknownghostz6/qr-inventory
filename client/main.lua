@@ -299,6 +299,20 @@ RegisterNetEvent('inventory:client:UpdatePlayerInventory', function(isError)
     })
 end)
 
+-- This needs to be changed to do a raycast so items arent placed in walls
+RegisterNetEvent('inventory:client:AddDropItem', function(dropId, player, coords)
+    local forward = GetEntityForwardVector(GetPlayerPed(GetPlayerFromServerId(player)))
+    local x, y, z = table.unpack(coords + forward * 0.5)
+    Drops[dropId] = {
+        id = dropId,
+        coords = {
+            x = x,
+            y = y,
+            z = z - 0.3,
+        },
+    }
+end)
+
 RegisterNetEvent('inventory:client:RemoveDropItem', function(dropId)
     Drops[dropId] = nil
     if Config.UseItemDrop then
@@ -313,9 +327,13 @@ RegisterNetEvent('inventory:client:DropItemAnim', function()
     SendNUIMessage({
         action = "close",
     })
-    LoadAnimDict("pickup_object")
-    TaskPlayAnim(ped, "pickup_object" ,"pickup_low" ,8.0, -8.0, -1, 1, 0, false, false, false )
-    Wait(2000)
+    local dict = "amb_camp@world_camp_jack_throw_rocks_casual@male_a@idle_a"
+    RequestAnimDict(dict)
+    while not HasAnimDictLoaded(dict) do
+        Wait(10)
+    end
+    TaskPlayAnim(ped, dict, "idle_a", 1.0, 8.0, -1, 1, 0, false, false, false)
+    Wait(1200)
     ClearPedTasks(ped)
 end)
 
@@ -500,7 +518,7 @@ CreateThread(function()
                         end
                     else
                         sleep = 0
-                        Citizen.InvokeNative(0x2A32FAA57B937173, 0x94FDAE17, v.coords.x, v.coords.y, v.coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.3, 0.3, 0.15, 120, 10, 20, 155, false, false, false, 1, false, false, false)
+                        Citizen.InvokeNative(0x2A32FAA57B937173, 0x07DCE236, v.coords.x, v.coords.y, v.coords.z, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.15, 255, 215, 0, 155, false, false, false, 1, false, false, false)
                     end
 
 					local coords = (v.object ~= nil and GetEntityCoords(v.object)) or vector3(v.coords.x, v.coords.y, v.coords.z)
