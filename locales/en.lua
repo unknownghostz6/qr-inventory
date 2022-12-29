@@ -3,10 +3,6 @@ English base language translation for qb-inventory
 Translation done by wanderrer (Martin Riggs#0807 on Discord)
 ]]--
 local Translations = {
-    progress = {
-        ["crafting"] = "Crafting...",
-        ["snowballs"] = "Collecting snowballs..",
-    },
     notify = {
         ["failed"] = "Failed",
         ["canceled"] = "Canceled",
@@ -43,16 +39,7 @@ local Translations = {
         ["use_item"] = "Uses the item in slot ",
     },
     menu = {
-        ["vending"] = "Vending Machine",
-        ["craft"] = "Craft",
         ["o_bag"] = "Open Bag",
-    },
-    interaction = {
-        ["craft"] = "~g~E~w~ - Craft",
-    },
-    label = {
-        ["craft"] = "Crafting",
-        ["a_craft"] = "Attachment Crafting",
     },
 }
 
