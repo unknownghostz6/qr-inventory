@@ -1,5 +1,7 @@
 ## UI redesigned by Unknown Ghostz#9131
 
+Press B to open inventory
+
 # qr-inventory
 
 ## Dependencies
