@@ -1,3 +1,5 @@
+## UI redesigned by Unknown Ghostz#9131
+
 # qr-inventory
 
 ## Dependencies
@@ -9,13 +11,7 @@
 - [qr-shops](https://github.com/QRCore-framework/qr-shops) - Needed in order to add shops
 
 ## Screenshots
-![General](https://i.imgur.com/GR0MDFN.png)
-![ID Card](https://i.imgur.com/C6gAOWi.png)
-![Weapon](https://i.imgur.com/RbCvHJb.png)
-![Shop](https://i.imgur.com/7Da7UEX.png)
-![Crafting](https://i.imgur.com/peONaL9.png)
-![Glovebox](https://i.imgur.com/LjDEYWa.png)
-![Trunk](https://i.imgur.com/IoGYZbv.png)
+![General](https://cdn.discordapp.com/attachments/1093062643641753640/1093062959707729990/Screenshot_6.png)
 
 ## Features
 - Item crafting
@@ -28,7 +24,7 @@
 
 ## Installation
 ### Manual
-- Download the script and put it in the `[qb]` directory.
+- Download the script and put it in the `[qr]` directory.
 - Import `qr-inventory.sql` in your database
 - Add the following code to your server.cfg/resouces.cfg
 ```
